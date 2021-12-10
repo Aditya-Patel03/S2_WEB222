@@ -16,52 +16,64 @@ function validation() {
     //Username Validation
     let u_name = document.getElementById("uname").value;
     var isAlphabet = /^[A-Za-z]/;
+var count=0;
+var flag=true;
 
-
-    if (f_name == "" || l_name == "" || passwd == "" || c_passwd == "" || u_name == "" || email == "" || Age == "")// No Space Validation
+    if (f_name == "" || l_name == "" || passwd == "" || c_passwd == "" || u_name == "" )// No Space Validation
     {
-        alert("No space values allowed!!!");
-        alert("Try Again!!!\n");
-        return false;
+        //alert("No space values allowed!!!");
+        document.querySelector('#errors').innerHTML = "<br># No space values allowed!!! ";
+        count++;
+        flag=false;
+       // return false;
     }
     // First Name and Last Name 1st letter cap Validation
-    else if (!isUppercase.test(f_name) || !isUppercase.test(l_name)) {
-        alert("First Letter Must be UpperCase for First Name and Last Name !!!\n Try Again!!!");
-        //alert("Try Again!!!\n");
-        return false;
-    }
-    else if (!letters.test(f_name) || !letters.test(l_name)) {
-        alert("Only Aplhabets for First Name and Last Name !!!\n Try Again!!!");
-        //alert("Try Again!!!\n");
-        return false;
+    if (!isUppercase.test(f_name) || !isUppercase.test(l_name)||!letters.test(f_name) || !letters.test(l_name)) {
+        // document.querySelector.("First Letter Must be UpperCase for First Name and Last Name !!!\n Try Again!!!");
+        document.querySelector('#errors').innerHTML += "<br><br># First Letter Must be UpperCase for First Name and Last Name !!! Alphabets Only!!! <br><br><br><br>";
+        count++;
+        flag=false;
+        //return false;
     }
     
-    
-        //
-        //Validating Password characters and Length
     //
-    else if (passwd.length < 6 || u_name.length<6)// Password Length Validation
+    //Validating Password characters and Length
+    //
+    if (passwd.length < 6 || !passw.test(passwd) || !isUppercase.test(passwd))// Password Length Validation
     {
-        alert("Password and Username must be atleast 6 charcters\n");
-        alert("Try Again!!!\n");
-        return false;
-    }
-    else if (!passw.test(passwd) || !isUppercase.test(passwd)) {
-         alert('Error!! Passwords must start with an Alphabet, and must contain at least 1 digit, and 1 uppercase characters.\n Try Again!!!');
+        document.querySelector('#errors').innerHTML += "<br><br><br># Password must be atleast 6 charcters and Passwords must start with an Alphabet, and must contain at least 1 digit, and 1 uppercase characters!!! <br>";
+        count++;
+        flag=false;
+        
+        //alert("Password must be atleast 6 charcters and Passwords must start with an Alphabet, and must contain at least 1 digit, and 1 uppercase characters!!!\n");
        // alert("Try Again!!!\n");
-        return false;
+        //return false;
     }
-    else if (passwd != c_passwd)//Password and confirm Password matching Validation
+    
+    if (passwd != c_passwd)//Password and confirm Password matching Validation
     {
-         alert("Password and Confirm Password Values doesn't match!!!\n Try Again!!!");
-        //alert("Try Again!!!\n");
-        return false;
+        document.querySelector('#errors').innerHTML += "# Password and Confirm Password Values doesn't match!!!";
+        count++;
+        flag=false;
+    
+        // alert("Password and Confirm Password Values doesn't match!!!\n Try Again!!!")
+       // return false;
     }
-    else if (!isAlphabet.test(u_name)) {
-        alert("Error: Username must start with alphabets!\n Try Again!!!");
-
-        return false;
+    //
+    //Username
+    //
+    if (u_name.length<6 || !isAlphabet.test(u_name)) {
+        document.querySelector('#errors').innerHTML += "<br><br><br><br># Username must start with alphabets!!!";
+        count++;
+        flag=false;
+        
+        //alert("Error: Username must start with alphabets!\n Try Again!!!");
+        //return false;
     }
      
-    else { return true; }
+    //else { return true; }
+    if (flag == true) {
+        alert("***Your Form Is successfully submitted.***\n Now you will be Redirected to another link!!!");
+        return flag;
+    }
 }
