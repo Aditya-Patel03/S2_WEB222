@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Patel Aditya Dharmesh </title>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="css/normalize.css" />
+	<script src="info.js"></script>
+</head>
+<body>
+
+	<header>
+		<div class="center">
+			<h1>
+				WEB222 - Final Assessment - INFO page
+			</h1>
+		</div>
+	</header>
+	<nav>
+		<div class="center">
+			<ul>
+				<li><a href="info.html">INFO</a></li>
+				<li><a href="reflection.html">Reflection</a></li>
+				<li><a href="honesty.html">Honesty</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<section class="main center">
+
+		<!-- Start your code here -->
+		<h2>Final Assessment INFO</h2>
+		<p>"*" Refers to required feilds</p>
+		<form action="https://httpbin.org/post" onsubmit="return validation()" method="post">
+			<!--First Name-->
+			<label for="fname">First name*:</label><br>
+			<input type="text" id="fname" name="fname"><br>
+			<br>
+			<!--Last Name-->
+			<label for="lname">Last name*:</label><br>
+			<input type="text" id="lname" name="lname"><br><br>
+			<!--Password-->
+			<label for="pwd">Password*:</label><br>
+			<input type="password" id="pwd" name="pwd"><br><br>
+			<!--Confirm Password-->
+			<label for="cpwd">Confirm Password*:</label><br>
+			<input type="password" id="cpwd" name="cpwd"><br><br>
+			<!--User Name-->
+			<label for="uname">User name*:</label><br>
+			<input type="text" id="uname" name="uname"><br><br>
+			<!--Education Status-->
+			<p>Choose your current Education Status:</p>
+			<input type="radio" id="graduate" name="fav_language" value="Graduated">
+			<label for="graduate">Graduated</label><br>
+			<input type="radio" id="enrolled" name="fav_language" value="Enrolled">
+			<label for="enrolled">Enrolled</label><br>
+			<input type="radio" id="Notgraduated" name="fav_language" value="Not Graduated">
+			<label for="Notgraduated">Not Graduated</label><br><br>
+			<!--Email-->
+			<label for="mail">E-mail*:</label><br>
+			<input type="email" id="mail" name="mail"><br><br>
+			<!--Age-->
+			<label for="age">Age*(between 18 and 60):</label>
+			<input type="number" id="age" name="age" min="18" max="60"><br><br>
+			<!--Hidden Attribute-->
+			<input type="hidden" name="lastName" id="lastName" value="Patel" />
+			<input type="hidden" name="studentId" id="studentId" value="143595205" />
+
+			<input type="submit" value="Submit">
+		</form>
+
+		<!-- End your code here  -->
+
+	</section>
+	<footer>
+		<div class="center">
+			<a href="https://github.com/Aditya-Patel03">github.com/Aditya-Patel03</a>
+			&copy; 2021 Aditya Patel
+		</div>
+	</footer>
+</body>
+</html>	  
